@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Application setting</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+<table>
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Module</th>
+    <th>Setting_name</th>
+    <th>Setting_value</th>
+    <th>Is_enabled</th>
+  </tr>
+  </thead>
+  <tbody>
+    {%for application in applications %}
+  <tr>
+    <td>{{ application.id }}</td>
+    <td>{{ application.module }}</td>
+    <td>{{ application.setting_name }}</td>
+    <td>{{ application.setting_value }}</td>
+    <td>{{ application.is_enabled }}</td>
+    <td>
+      <a href="/edit/{{ application.id }}">Edit</a>
+      <a href="/delete/{{ application.id }}">Delete</a>
+    </td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+<br><br>
+<button><a href="/application">Add data</a> </button>
+</body>
+</html>

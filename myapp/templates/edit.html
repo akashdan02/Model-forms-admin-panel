@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Details</title>
+</head>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<body>
+<form method = "POST" action="/update/{{application.id}}">
+  {% csrf_token %}
+  <div>
+    <br>
+    <p>
+      <h3>Update Details</h3>
+    </p>
+  </div>
+    <div>
+      <p>Id :</p>
+      <div>
+        <input type="number" name="id" value="{{application.id}}">
+      </div>
+    </div>
+  <div>
+      <p>Module :</p>
+      <div>
+        <input type="text" name="module" value="{{application.module}}">
+      </div>
+    </div>
+  <div>
+      <p>Setting_name :</p>
+      <div>
+        <input type="text" name="setting_name" value="{{application.setting_name}}">
+      </div>
+    </div>
+  <div>
+      <p>Setting_value :</p>
+      <div>
+        <input type="text" name="setting_value" value="{{application.setting_value}}">
+      </div>
+    </div>
+  <div>
+      <p>Is_enabled :</p>
+      <div>
+        <input type="number" name="is_enabled" value="{{application.is_enabled}}">
+      </div>
+    </div>
+    <div>
+        <br>
+        <button type="submit">Update</button>
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+<form method="post" action="/application">
+  {%csrf_token %}
+  <div>
+    <br>
+    <p>
+      <h3>Application_settings</h3>
+    </p>
+  </div>
+  <div>
+    <p>id:</p>{{ form.id }}
+  </div>
+  <div>
+    <p>module:</p>{{ form.module }}
+  </div>
+  <div>
+    <p>setting_name:</p>{{ form.setting_name }}
+  </div>
+  <div>
+    <p>setting_value:</p>{{ form.setting_value }}
+  </div>
+   <div>
+    <p>is_enabled:</p>{{ form.is_enabled }}
+  </div>
+   <div>
+    <br> <button type="submit">SUBMIT</button>
+  </div>
+</form>
+
+</body>
+</html>
